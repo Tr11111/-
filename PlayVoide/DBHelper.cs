@@ -36,7 +36,6 @@ namespace PlayVideo
                     //端口
                     builder.Port = 13441;
                     //服务器地址
-                    builder.Server = "9.tcp.cpolar.top";
                     //连接时的数据库
                     builder.Database = "test";
                     //定义与数据连接的链接
