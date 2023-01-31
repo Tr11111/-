@@ -1,0 +1,14 @@
+C:\Users\Tr\Desktop\ClassLibrary1\PlayVoide\bin\Debug\PlayVoide.exe
+C:\Users\Tr\Desktop\ClassLibrary1\PlayVoide\obj\Debug\PlayVoide.csproj.AssemblyReference.cache
+C:\Users\Tr\Desktop\ClassLibrary1\PlayVoide\obj\Debug\PlayVoide.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tr\Desktop\ClassLibrary1\PlayVoide\obj\Debug\Interop.WMPLib.dll
+C:\Users\Tr\Desktop\ClassLibrary1\PlayVoide\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Tr\Desktop\ClassLibrary1\PlayVoide\obj\Debug\PlayVoide.csproj.ResolveComReference.cache
+C:\Users\Tr\Desktop\ClassLibrary1\PlayVoide\obj\Debug\PlayVoide.Form1.resources
+C:\Users\Tr\Desktop\ClassLibrary1\PlayVoide\obj\Debug\PlayVoide.Properties.Resources.resources
+C:\Users\Tr\Desktop\ClassLibrary1\PlayVoide\obj\Debug\PlayVoide.csproj.GenerateResource.cache
+C:\Users\Tr\Desktop\ClassLibrary1\PlayVoide\obj\Debug\PlayVoide.csproj.CoreCompileInputs.cache
+C:\Users\Tr\Desktop\ClassLibrary1\PlayVoide\obj\Debug\PlayVoide.csproj.Fody.CopyLocal.cache
+C:\Users\Tr\Desktop\ClassLibrary1\PlayVoide\obj\Debug\PlayVoide.exe
+C:\Users\Tr\Desktop\ClassLibrary1\PlayVoide\bin\Debug\Interop.WMPLib.dll
+C:\Users\Tr\Desktop\ClassLibrary1\PlayVoide\bin\Debug\AxInterop.WMPLib.dll
