@@ -34,9 +34,8 @@ namespace PlayVideo
                     //密码
                     builder.Password = "123456";
                     //端口
-                    builder.Port = 45171;
+                    builder.Port = 13441;
                     //服务器地址
-                    builder.Server = "400f0437.nat123.fun";
                     //连接时的数据库
                     builder.Database = "test";
                     //定义与数据连接的链接

@@ -34,6 +34,11 @@ namespace PlayVideo
         {
             try
             {
+                if (string.IsNullOrWhiteSpace(textBox2.Text) || string.IsNullOrWhiteSpace(comboBox1.Text))
+                {
+                    MessageBox.Show("账户或密码不能为空！");
+                    return;
+                }
                 string username = this.comboBox1.Text.Trim();
                 string password = this.textBox2.Text.Trim();
 
@@ -70,9 +75,8 @@ namespace PlayVideo
                     if (dBHelper.Logins(comboBox1.Text, textBox2.Text))
                     {
                         name = this.comboBox1.Text;
-                        Study study = new Study();
-                        study.Show();
                         this.Hide();
+                        new Study().Show();
                     }
                 }
             }
@@ -108,9 +112,8 @@ namespace PlayVideo
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Study study = new Study();
-            study.Show();
             this.Hide();
+            new Study().Show();
         }
 
         public Dictionary<string, User> users =new Dictionary<string, User>();
@@ -178,6 +181,22 @@ namespace PlayVideo
             }
 
             fs.Close();
+        }
+
+        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var isOk = MessageBox.Show("是否清空全部历史记录？", "提示",MessageBoxButtons.OKCancel,MessageBoxIcon.Information);
+            if (isOk == DialogResult.OK)
+            {
+                FileStream fs = new FileStream("data.bin", FileMode.Create);
+                BinaryFormatter bf = new BinaryFormatter();
+                users.Clear();
+                bf.Serialize(fs, users);
+                fs.Close();
+                comboBox1.Items.Clear();
+                comboBox1.Text = "";
+                textBox2.Text = "";
+            }
         }
     }
 }

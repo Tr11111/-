@@ -93,6 +93,7 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "❤️";
             this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.MouseEnter += new System.EventHandler(this.label1_MouseEnter);
             // 
             // label2
             // 
@@ -105,6 +106,7 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "🏁";
             this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label2.MouseEnter += new System.EventHandler(this.label2_MouseEnter);
             // 
             // listBox1
             // 
@@ -120,6 +122,8 @@
             this.listBox1.Size = new System.Drawing.Size(267, 432);
             this.listBox1.TabIndex = 9;
             this.listBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseClick);
+            this.listBox1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDoubleClick);
+            this.listBox1.MouseHover += new System.EventHandler(this.listBox1_MouseHover);
             // 
             // label3
             // 
@@ -128,9 +132,8 @@
             this.label3.Font = new System.Drawing.Font("微软雅黑", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.Location = new System.Drawing.Point(341, 771);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 21);
+            this.label3.Size = new System.Drawing.Size(0, 21);
             this.label3.TabIndex = 10;
-            this.label3.Text = "lable3";
             // 
             // label4
             // 
@@ -144,6 +147,7 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "◀️";
             this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.label4.MouseEnter += new System.EventHandler(this.label4_MouseEnter);
             // 
             // label5
             // 
@@ -156,6 +160,7 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "▶️";
             this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.label5.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
             // 
             // label6
             // 
@@ -168,6 +173,7 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "⏸️";
             this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.label6.MouseEnter += new System.EventHandler(this.label6_MouseEnter);
             // 
             // button3
             // 
@@ -182,6 +188,7 @@
             this.button3.TabIndex = 5;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.MouseEnter += new System.EventHandler(this.button3_MouseEnter);
             // 
             // trackBar2
             // 
@@ -211,6 +218,7 @@
             this.label7.Size = new System.Drawing.Size(56, 37);
             this.label7.TabIndex = 13;
             this.label7.Text = "🔉";
+            this.label7.MouseEnter += new System.EventHandler(this.label7_MouseEnter);
             // 
             // label8
             // 
@@ -222,6 +230,7 @@
             this.label8.Size = new System.Drawing.Size(56, 37);
             this.label8.TabIndex = 13;
             this.label8.Text = "🔅";
+            this.label8.MouseEnter += new System.EventHandler(this.label8_MouseEnter);
             // 
             // label9
             // 

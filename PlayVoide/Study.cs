@@ -13,7 +13,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Timer = System.Threading.Timer;
+using ToolTip = System.Windows.Forms.ToolTip;
 
 namespace PlayVideo
 {
@@ -246,6 +248,7 @@ namespace PlayVideo
                 dBHelper.SelectList(id);
                 listBox1.Items.Clear();
                 listBox1.Items.AddRange(DBHelper.dz.ToArray());
+
             }
         }
         public static bool isZhank = false;
@@ -333,7 +336,7 @@ namespace PlayVideo
 
         private void trackBar2_Scroll(object sender, EventArgs e)
         {
-            var a = this.trackBar3.Value * 10;
+            var a = this.trackBar2.Value * 10;
             axWindowsMediaPlayer1.settings.volume = a;
         }
 
@@ -364,12 +367,9 @@ namespace PlayVideo
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(Login.name))
-            {
-                Login login = new Login();
-                login.Show();
-                this.Hide();
-            }
+            this.Hide();
+            axWindowsMediaPlayer1.close();
+            new Login().Show();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -382,6 +382,10 @@ namespace PlayVideo
         }
 
         private void listBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            List_c(e);
+        }
+        public void List_c(MouseEventArgs e)
         {
             int index = listBox1.IndexFromPoint(e.X, e.Y);
             listBox1.SelectedIndex = index;
@@ -419,6 +423,86 @@ namespace PlayVideo
                     label3.Text = "";
                 }
             }
+        }
+        private void button3_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip toolTip2 = new ToolTip();
+            toolTip2.AutoPopDelay = 5000; toolTip2.InitialDelay = 500; toolTip2.ReshowDelay = 500;
+            toolTip2.ShowAlways = true;
+            toolTip2.SetToolTip(this.button3, "登录/重新登陆");  //设置提示信息为自定义
+        }
+
+        private void label1_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip toolTip2 = new ToolTip();
+            toolTip2.AutoPopDelay = 5000; toolTip2.InitialDelay = 500; toolTip2.ReshowDelay = 500;
+            toolTip2.ShowAlways = true;
+            toolTip2.SetToolTip(this.label1, "视频点赞");  //设置提示信息为自定义
+        }
+
+        private void label2_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip toolTip2 = new ToolTip();
+            toolTip2.AutoPopDelay = 5000; toolTip2.InitialDelay = 500; toolTip2.ReshowDelay = 500;
+            toolTip2.ShowAlways = true;
+            toolTip2.SetToolTip(this.label2, "扩展设置");  //设置提示信息为自定义
+        }
+
+        private void label5_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip toolTip2 = new ToolTip();
+            toolTip2.AutoPopDelay = 5000; toolTip2.InitialDelay = 500; toolTip2.ReshowDelay = 500;
+            toolTip2.ShowAlways = true;
+            toolTip2.SetToolTip(this.label5, "下一条");  //设置提示信息为自定义
+        }
+
+        private void label4_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip toolTip2 = new ToolTip();
+            toolTip2.AutoPopDelay = 5000; toolTip2.InitialDelay = 500; toolTip2.ReshowDelay = 500;
+            toolTip2.ShowAlways = true;
+            toolTip2.SetToolTip(this.label4, "上一条");  //设置提示信息为自定义
+        }
+
+        private void label6_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip toolTip2 = new ToolTip();
+            toolTip2.AutoPopDelay = 5000; toolTip2.InitialDelay = 500; toolTip2.ReshowDelay = 500;
+            toolTip2.ShowAlways = true;
+            toolTip2.SetToolTip(this.label6, "播放/切换");  //设置提示信息为自定义
+        }
+
+        private void label8_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip toolTip2 = new ToolTip();
+            toolTip2.AutoPopDelay = 5000; toolTip2.InitialDelay = 500; toolTip2.ReshowDelay = 500;
+            toolTip2.ShowAlways = true;
+            toolTip2.SetToolTip(this.label8, "透明度");  //设置提示信息为自定义
+        }
+
+        private void label7_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip toolTip2 = new ToolTip();
+            toolTip2.AutoPopDelay = 5000; toolTip2.InitialDelay = 500; toolTip2.ReshowDelay = 500;
+            toolTip2.ShowAlways = true;
+            toolTip2.SetToolTip(this.label7, "音量");  //设置提示信息为自定义
+        }
+
+        private void listBox1_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip toolTip2 = new ToolTip();
+            toolTip2.AutoPopDelay = 5000; toolTip2.InitialDelay = 500; toolTip2.ReshowDelay = 500;
+            toolTip2.ShowAlways = true;
+            toolTip2.SetToolTip(this.listBox1, "当前视频路径：" + this.listBox1.Text);  //设置提示信息为自定义
+        }
+
+        private void listBox1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Clipboard.SetDataObject(this.listBox1.Text);
+            ToolTip toolTip2 = new ToolTip();
+            toolTip2.AutoPopDelay = 5000; toolTip2.InitialDelay = 500; toolTip2.ReshowDelay = 500;
+            toolTip2.ShowAlways = true;
+            toolTip2.SetToolTip(this.listBox1, "已复制到剪切板");  //设置提示信息为自定义
         }
     }
 }
