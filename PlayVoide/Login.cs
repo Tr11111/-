@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using PlayVideo.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,12 +7,15 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
+using System.Security.Policy;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -19,6 +23,7 @@ namespace PlayVideo
 {
     public partial class Login : Form
     {
+        public int adminNum = 0;
         public static string name;
         public Login()
         {
@@ -70,8 +75,8 @@ namespace PlayVideo
 
                 if (!Regex.IsMatch(comboBox1.Text.ToLower(), "/response|group_concat|cmd|sysdate|xor|declare|db_name|char| and| or|truncate| asc| desc|drop |table|count|from|select|insert|update|delete|union|into|load_file|outfile/") && !Regex.IsMatch(textBox2.Text.ToLower(), "/response|group_concat|cmd|sysdate|xor|declare|db_name|char| and| or|truncate| asc| desc|drop |table|count|from|select|insert|update|delete|union|into|load_file|outfile/"))
                 {
-                    DBHelper dBHelper = new DBHelper();
-                    
+                    Helper dBHelper = new Helper();
+
                     if (dBHelper.Logins(comboBox1.Text, textBox2.Text))
                     {
                         name = this.comboBox1.Text;
@@ -116,9 +121,10 @@ namespace PlayVideo
             new Study().Show();
         }
 
-        public Dictionary<string, User> users =new Dictionary<string, User>();
+        public Dictionary<string, User> users = new Dictionary<string, User>();
         private void Login_Load(object sender, EventArgs e)
         {
+            this.Icon = Resources.Video;
             //  读取配置文件寻找记住的用户名和密码
             FileStream fs = new FileStream("data.bin", FileMode.OpenOrCreate);
 
@@ -185,7 +191,8 @@ namespace PlayVideo
 
         private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            var isOk = MessageBox.Show("是否清空全部历史记录？", "提示",MessageBoxButtons.OKCancel,MessageBoxIcon.Information);
+            adminNum = 0;
+            var isOk = MessageBox.Show("是否清空全部历史记录？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (isOk == DialogResult.OK)
             {
                 FileStream fs = new FileStream("data.bin", FileMode.Create);
@@ -196,6 +203,42 @@ namespace PlayVideo
                 comboBox1.Items.Clear();
                 comboBox1.Text = "";
                 textBox2.Text = "";
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(IPtext.Text) && !string.IsNullOrWhiteSpace(Porttext.Text))
+            { 
+                var condition1 = Regex.IsMatch(Porttext.Text, @"^[0-9]+$");
+                var condition2 = IPtext.Text.Split('.').Length == 4;
+                if (condition1 && condition2)
+                {
+                    Helper.IP = IPtext.Text;
+                    Helper.Port = int.Parse(Porttext.Text);
+                    Helper.builder = new MySqlConnectionStringBuilder();
+                    //用户名
+                    Helper.builder.UserID = "root";
+                    //密码
+                    Helper.builder.Password = "123456";
+                    //端口
+                    Helper.builder.Port = (uint)Helper.Port;
+                    //服务器地址
+                    Helper.builder.Server = Helper.IP;
+                    //连接时的数据库
+                    Helper.builder.Database = "test";
+                    //定义与数据连接的链接
+                    Helper.connection = new MySqlConnection(Helper.builder.ConnectionString);
+                    MessageBox.Show("更换成功!");
+                }
+                else
+                {
+                    MessageBox.Show("格式不正确");
+                }
+            }
+            else
+            {
+                MessageBox.Show("不能为空");
             }
         }
     }

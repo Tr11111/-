@@ -1,5 +1,6 @@
 ﻿using Google.Protobuf.WellKnownTypes;
 using MySql.Data.MySqlClient;
+using PlayVideo.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,7 @@ namespace PlayVideo
         private static int duration = 60;
         private static bool isfasong = true;
         private static string sjstr;
+        
         public Add()
         {
             InitializeComponent();
@@ -47,7 +49,7 @@ namespace PlayVideo
                 }
                 else if (textBox5.Text == sjstr)
                 {
-                    DBHelper dBHelper = new DBHelper();
+                    Helper dBHelper = new Helper();
                     dBHelper.Add(textBox1.Text, textBox2.Text, textBox4.Text);
                 }
                 else
@@ -111,8 +113,8 @@ namespace PlayVideo
                         timer1.Tick += new EventHandler(count_down);
                         timer1.Interval = 1000;
                         timer1.Start();
-                        sjstr = DBHelper.getStr(false, 6);
-                        DBHelper.SendMail("Login验证码", sjstr, "", "2534407460@qq.com", "eayjlhlxkwhodjdd", textBox4.Text);
+                        sjstr = Helper.getStr(false, 6);
+                        Helper.SendMail("Login验证码", Helper.e_mail(sjstr), "", "getchatgptai0409@163.com", "SJVEBCQKWNLQEQGN", textBox4.Text);
 
                     }
                     else
@@ -142,6 +144,11 @@ namespace PlayVideo
                 button2.Text = $"稍后重试({duration})";
                 isfasong = false;
             }
+        }
+
+        private void Add_Load(object sender, EventArgs e)
+        {
+            this.Icon = Resources.Video;
         }
     }
 }
