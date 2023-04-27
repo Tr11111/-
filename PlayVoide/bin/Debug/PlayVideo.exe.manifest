@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="PlayVideo.exe" version="2.0.1.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="PlayVideo.exe" version="2.0.1.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="Video.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Dd9XnPf4lQ9lWgZ7zQHiYxe0cMzYZ2Y+b1ZGBYlXD5I=</dsig:DigestValue>
+        <dsig:DigestValue>XfnfBmwnfWQqrvQI3M+LzkLducF8voP0S4hv7jGcX4U=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,19 +62,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>MGeJ5z59xb9bSkxY4pxGpRdbuWtzM73zeBWRIyOuouo=</dsig:DigestValue>
+        <dsig:DigestValue>ZaDKT9pnnxQgLHinb/PMxZOMKOjiG97rxGNSdd2tGYQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PlayVideo.exe" size="3385296">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PlayVideo.exe" size="3648464">
       <assemblyIdentity name="PlayVideo" version="2.0.1.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>/uId72UzbGvbH/c4vUnJB2eY8ilGmKOzQdsnjGnSXkQ=</dsig:DigestValue>
+        <dsig:DigestValue>+LaQKmX41Uvo/x0TST1LY77QYv1PndRRRP1kZ32QEds=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

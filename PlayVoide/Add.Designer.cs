@@ -238,6 +238,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "注册";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Add_FormClosing);
+            this.Load += new System.EventHandler(this.Add_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

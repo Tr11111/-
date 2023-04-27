@@ -38,6 +38,10 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
+            this.IPtext = new System.Windows.Forms.TextBox();
+            this.Porttext = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox2
@@ -164,12 +168,51 @@
             this.linkLabel4.Text = "×";
             this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
             // 
+            // IPtext
+            // 
+            this.IPtext.Location = new System.Drawing.Point(-1, 420);
+            this.IPtext.Name = "IPtext";
+            this.IPtext.Size = new System.Drawing.Size(201, 28);
+            this.IPtext.TabIndex = 15;
+            // 
+            // Porttext
+            // 
+            this.Porttext.Location = new System.Drawing.Point(231, 419);
+            this.Porttext.Name = "Porttext";
+            this.Porttext.Size = new System.Drawing.Size(79, 28);
+            this.Porttext.TabIndex = 15;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(206, 419);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(17, 27);
+            this.label3.TabIndex = 16;
+            this.label3.Text = ":";
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button2.Location = new System.Drawing.Point(318, 414);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(126, 34);
+            this.button2.TabIndex = 17;
+            this.button2.Text = "更换地址";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Login
             // 
             this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(681, 450);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.Porttext);
+            this.Controls.Add(this.IPtext);
             this.Controls.Add(this.linkLabel4);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.checkBox1);
@@ -202,5 +245,9 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.LinkLabel linkLabel4;
+        private System.Windows.Forms.TextBox IPtext;
+        private System.Windows.Forms.TextBox Porttext;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button2;
     }
 }

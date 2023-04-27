@@ -49,6 +49,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
@@ -73,11 +77,11 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button2.ForeColor = System.Drawing.SystemColors.Window;
-            this.button2.Location = new System.Drawing.Point(593, 697);
+            this.button2.Location = new System.Drawing.Point(816, 695);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(112, 31);
             this.button2.TabIndex = 5;
-            this.button2.Text = "切换源";
+            this.button2.Text = "一代源";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             this.button2.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
@@ -119,7 +123,7 @@
             this.listBox1.ItemHeight = 27;
             this.listBox1.Location = new System.Drawing.Point(3, 61);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(267, 432);
+            this.listBox1.Size = new System.Drawing.Size(487, 432);
             this.listBox1.TabIndex = 9;
             this.listBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseClick);
             this.listBox1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDoubleClick);
@@ -182,7 +186,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button3.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.button3.Location = new System.Drawing.Point(593, 755);
+            this.button3.Location = new System.Drawing.Point(816, 753);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(112, 31);
             this.button3.TabIndex = 5;
@@ -237,7 +241,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label9.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label9.Location = new System.Drawing.Point(81, 13);
+            this.label9.Location = new System.Drawing.Point(193, 14);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(110, 31);
             this.label9.TabIndex = 14;
@@ -250,7 +254,7 @@
             this.panel1.Controls.Add(this.listBox1);
             this.panel1.Location = new System.Drawing.Point(437, 32);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(271, 496);
+            this.panel1.Size = new System.Drawing.Size(495, 496);
             this.panel1.TabIndex = 15;
             // 
             // timer1
@@ -268,12 +272,56 @@
             this.axWindowsMediaPlayer1.StatusChange += new System.EventHandler(this.axWindowsMediaPlayer1_StatusChange);
             this.axWindowsMediaPlayer1.ClickEvent += new AxWMPLib._WMPOCXEvents_ClickEventHandler(this.axWindowsMediaPlayer1_ClickEvent);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(437, 534);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(351, 28);
+            this.textBox1.TabIndex = 16;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.Location = new System.Drawing.Point(794, 533);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(138, 30);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "播放链接";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label10.ForeColor = System.Drawing.SystemColors.Control;
+            this.label10.Location = new System.Drawing.Point(732, 756);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(78, 27);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "用户名:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label11.ForeColor = System.Drawing.SystemColors.Control;
+            this.label11.Location = new System.Drawing.Point(732, 699);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(78, 27);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "当前源:";
+            // 
             // Study
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.WindowText;
-            this.ClientSize = new System.Drawing.Size(717, 801);
+            this.ClientSize = new System.Drawing.Size(944, 801);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label8);
@@ -291,12 +339,14 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(129, 282);
             this.Name = "Study";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "学习资料";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Study_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
@@ -328,6 +378,10 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
     }
 }
 
